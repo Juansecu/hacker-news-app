@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+/* ------ TAGS ------ */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+app-header {
+  display: block;
+  box-shadow: 0 0.063rem 0.25rem 0 rgba(0, 21, 41, 0.12);
+  padding: 3rem 0 2.7rem 10rem;
+  background-image: linear-gradient(to bottom, #ececec -32%, #fff 124%);
+}
