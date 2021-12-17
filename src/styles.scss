@@ -41,7 +41,7 @@ app-header {
 .card {
   border: 2px solid #979797;
   border-radius: 6px;
-  width: 35%;
+  width: 23rem;
   opacity: 0.5;
   transition: opacity 0.5s ease-in-out;
 }
@@ -146,3 +146,23 @@ app-header {
 }
 /* ------ TAB-MENU STYLES END ------ */
 /* ------------ CLASS STYLES END ------------ */
+
+/* ------------ RESPONSIVE STYLES START ------------ */
+@media only screen and (max-width: 400px) {
+  /* ------------ CLASS STYLES START ------------ */
+  .card {
+    width: 93%;
+  }
+  /* ------------ CLASS STYLES END ------------ */
+}
+
+@media only screen and (max-width: 768px) {
+  /* ------ COMPONENT STYLES START ------ */
+  app-header {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0 2.7rem 0;
+  }
+  /* ------ COMPONENT STYLES END ------ */
+}
+/* ------------ RESPONSIVE STYLES END ------------ */
