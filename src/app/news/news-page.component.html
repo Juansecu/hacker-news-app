@@ -1,0 +1,80 @@
+<!--
+  This is the news page component. It is used to display the news page.
+
+  This component will evaluate the news page data and display the news page.
+
+  This component will also display the news page navigation.
+
+  If infinite scrolling is enabled, this component will display the news throw scroll event.
+
+  If infinite scrolling is disabled, this component will display the first news provided
+  by the HackerNews API.
+-->
+
+<nav class="tab-menu d-f mb-4">
+  <a
+    routerLink="/news"
+    routerLinkActive="tab-menu__item--active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="tab-menu__item"
+    title="All news"
+  >All</a>
+  <a
+    routerLink="/news/faves"
+    routerLinkActive="tab-menu__item--active"
+    class="tab-menu__item"
+    title="Favorites"
+  >My faves</a>
+</nav>
+
+<select (change)="onChangeNewsFilter($event.target)" id="news-filter" class="filter-box mb-2 ml-4" title="Filter news">
+  <option value="angular">Angular</option>
+  <option value="reactjs">React</option>
+  <option value="vuejs">Vuejs</option>
+</select>
+
+<section
+  infinite-scroll
+  *ngIf="!infiniteScrollDisabled; else notInfiniteScroll"
+  (scrolled)="onScrollDown($event)"
+  class="news-section"
+  role="group"
+>
+  <div *ngFor="let techNews of news; let i = index" class="card d-f">
+    <a [href]="techNews.story_url" class="card__link" target="_blank">
+      <div [title]="techNews.story_title" class="card__content">
+        <span class="card__date d-f">
+          <img src="assets/images/iconmonstr-time-2.png" class="card__clock-icon" alt="Clock icon">
+          {{ techNews.created_at | timeSince }} by {{ techNews.author }}
+        </span>
+        <h4 class="card__title">{{ techNews.story_title }}</h4>
+      </div>
+    </a>
+    <div class="card__favorite">
+      <button (click)="addToFavorites(techNews, i)" class="card__favorite-btn" title="Add to Favorites">
+        <img src="assets/images/iconmonstr-favorite-2.png" alt="No-set favorite icon">
+      </button>
+    </div>
+  </div>
+</section>
+
+<ng-template #notInfiniteScroll>
+  <section class="news-section" role="group">
+    <div *ngFor="let techNews of news" class="card d-f">
+      <a [href]="techNews.story_url" target="_blank">
+        <div [title]="techNews.story_title" class="card__content">
+          <span class="card__date d-f">
+            <img src="assets/images/iconmonstr-time-2.png" class="card__clock-icon" alt="Clock icon">
+            {{ techNews.created_at | timeSince }} by {{ techNews.author }}
+          </span>
+          <h4 class="card__title">{{ techNews.story_title }}</h4>
+        </div>
+      </a>
+      <div class="card__favorite">
+        <button (click)="addToFavorites(techNews)" class="card__favorite-btn" title="Add to Favorites">
+          <img src="assets/images/iconmonstr-favorite-3.png" alt="Favorite icon">
+        </button>
+      </div>
+    </div>
+  </section>
+</ng-template>

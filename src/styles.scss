@@ -17,3 +17,132 @@ app-header {
 }
 /* ------ COMPONENT STYLES END ------ */
 /* ------------ TAGS END ------------ */
+
+/* ------------ CLASS STYLES START ------------ */
+/* ------ GLOBAL STYLES START ------ */
+.d-f {
+  display: flex;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.mb-4 {
+  margin-bottom: 4rem;
+}
+
+.ml-4 {
+  margin-left: 4rem;
+}
+/* ------ GLOBAL STYLES END ------ */
+
+/* ------ CARD STYLES START ------ */
+.card {
+  border: 2px solid #979797;
+  border-radius: 6px;
+  width: 35%;
+  opacity: 0.5;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.card:hover {
+  opacity: 1;
+}
+
+.card__link {
+  display: contents;
+}
+
+.card__clock-icon {
+  margin-right: 0.5rem;
+  width: 1rem;
+}
+
+.card__content {
+  flex: 75%;
+  padding: 1.5625rem 1rem 0 1.625rem;
+}
+
+.card__date {
+  align-items: center;
+  font-size: 0.7rem;
+  color: #767676;
+}
+
+.card__favorite {
+  flex: 25%;
+  background-color: rgba(96, 96, 96, 0.1);
+}
+
+.card__favorite-btn {
+  border: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.card__favorite-btn:hover {
+  background-color: rgba(96, 96, 96, 0.17);
+}
+
+.card__title {
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  display: -moz-box;
+  display: -webkit-box;
+  overflow: hidden;
+  margin-top: 0.4375rem;
+  color: #6b6b6b;
+}
+/* ------ CARD STYLES END ------ */
+
+/* ------ FILTER-BOX STYLES START ------ */
+.filter-box {
+  outline: none;
+  border: 1px solid #2e2e2e;
+  border-radius: 4px;
+  width: 10rem;
+  height: 1.5rem;
+}
+
+/* ------ TAB-MENU STYLES START ------ */
+.tab-menu {
+  justify-content: center;
+}
+
+.tab-menu__item {
+  display: inline-block;
+  min-width: 5rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 2px;
+  border: 1px solid #d6d6d6;
+  text-align: center;
+  color: #6b6b6b;
+  cursor: pointer;
+  transition: all 0.5s linear;
+}
+
+.tab-menu__item:hover {
+  background-color: #ececec;
+}
+
+.tab-menu__item--active {
+  border-color: #1797ff;
+}
+
+.tab-menu__item--active:hover {
+  background-color: unset;
+}
+
+.tab-menu__item--active:not(:first-child) {
+  border-left: none;
+}
+
+.tab-menu__item--active:not(:last-child) {
+  border-right: none;
+}
+/* ------ TAB-MENU STYLES END ------ */
+/* ------------ CLASS STYLES END ------------ */
